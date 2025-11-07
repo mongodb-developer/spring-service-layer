@@ -1,4 +1,11 @@
 package com.mongodb.springservicelayer.controller;
 
-public class UpdateNameRequest {
-}
+import jakarta.validation.constraints.NotBlank;
+
+/**
+ * Request DTO for updating a user's name
+ */
+public record UpdateNameRequest(
+        @NotBlank(message = "Name is required")
+        String name
+) {}
